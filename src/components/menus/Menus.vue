@@ -1,6 +1,6 @@
 <template>
     <div v-for="menu in menus" :key="menu.id" class="card mb-3">
-        <div class="row g-0">
+        <router-link :to="{ name: 'Menu', params: { id: menu.id }}" class="row g-0">
             <div class="col-md-4">
                 <img :src="require(`@/assets/menus/${menu.img}`)" class="img-fluid rounded-start">
             </div>
@@ -19,13 +19,13 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import { Menu } from '../menus/Menu'
+import { Menu } from './Menu'
 
 @Options({
     components: {}
