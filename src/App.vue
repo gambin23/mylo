@@ -11,7 +11,7 @@
                         <router-link to="/" class="nav-link">Home</router-link>
                     </li>
                     <li class="nav-item active">
-                        <router-link to="/" class="nav-link">Menus</router-link>
+                        <router-link to="/menus" class="nav-link">Menus</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link to="/about" class="nav-link">About</router-link>
@@ -24,7 +24,9 @@
             </div>
         </div>
     </nav>
-    <router-view />
+    <div class="container mt-5">
+        <router-view />
+    </div>
 </template>
 
 <style lang="scss">
