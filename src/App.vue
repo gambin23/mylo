@@ -28,6 +28,17 @@
         <router-view />
     </div>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { initMenusStore } from '@/store/menus.store'
+import { initMenuStore } from '@/store/menu.store'
 
+export default defineComponent({
+    setup () {
+        initMenusStore()
+        initMenuStore()
+    }
+})
+</script>
 <style lang="scss">
 </style>

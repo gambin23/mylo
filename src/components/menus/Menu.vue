@@ -1,20 +1,21 @@
 <template>
+    <div v-if="loading">loading...</div>
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img :src="require(`@/assets/menus/${menu.img}`)" class="img-fluid rounded-start">
+                <img v-if="menu?.img" :src="require(`@/assets/menus/${menu.img}`)" class="img-fluid rounded-start">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{menu.name}}
+                        {{menu?.name}}
                     </h5>
                     <p class="card-text">
-                        {{menu.description}}
+                        {{menu?.description}}
                     </p>
                     <p class="card-text">
                         <small class="text-muted">
-                            {{menu.dateCreated}}
+                            {{menu?.dateCreated}}
                         </small>
                     </p>
                 </div>
@@ -24,20 +25,24 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
-import { Menu } from '../menus/Menu'
+import { defineComponent, PropType } from 'vue'
+import { Menu } from '@/types/Menu'
 
-@Options({
-    components: {}
-})
-export default class MenuComponent extends Vue {
-    menu: Menu = {
-        id: '1',
-        name: 'GiG Lunch | Malta',
-        description: 'All the lunch menu offered at GiG Beach. You can book your lunch from here.',
-        dateCreated: new Date(),
-        dateUpdated: new Date(),
-        img: 'gig.png'
+export default defineComponent({
+    name: 'MenuComponent',
+    props: {
+        menu: {
+            required: false,
+            type: Object as PropType<Menu>
+        },
+        loading: {
+            required: false,
+            type: Boolean
+        },
+        error: {
+            required: false,
+            type: Boolean
+        }
     }
-}
+})
 </script>

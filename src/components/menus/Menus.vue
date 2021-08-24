@@ -1,4 +1,5 @@
 <template>
+    <div v-if="loading">loading...</div>
     <div v-for="menu in menus" :key="menu.id" class="card mb-3">
         <router-link :to="{ name: 'Menu', params: { id: menu.id }}" class="row g-0">
             <div class="col-md-4">
@@ -24,30 +25,24 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
-import { Menu } from './Menu'
+import { Menu } from '@/types/Menu'
+import { defineComponent, PropType } from 'vue'
 
-@Options({
-    components: {}
-})
-export default class MenusComponent extends Vue {
-    menus: Menu[] = [
-        {
-            id: '1',
-            name: 'GiG Lunch | Malta',
-            description: 'All the lunch menu offered at GiG Beach. You can book your lunch from here.',
-            dateCreated: new Date(),
-            dateUpdated: new Date(),
-            img: 'gig.png'
+export default defineComponent({
+    name: 'MenusComponent',
+    props: {
+        menus: {
+            required: true,
+            type: Array as PropType<Menu[]>
         },
-        {
-            id: '2',
-            name: 'GiG Lunch | Spain',
-            description: 'All the lunch menu offered at GiG Marbella. You can book your lunch from here.',
-            dateCreated: new Date(),
-            dateUpdated: new Date(),
-            img: 'gig.png'
+        loading: {
+            required: true,
+            type: Boolean
+        },
+        error: {
+            required: true,
+            type: Boolean
         }
-    ]
-}
+    }
+})
 </script>

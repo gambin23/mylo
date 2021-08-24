@@ -1,19 +1,27 @@
 <template>
     <div class="row">
         <div class="col">
-            <MenusComponent></MenusComponent>
+            <MenusComponent :menus="state.payload" :loading="state.loading" :error="state.error" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
+import { defineComponent } from 'vue'
+import { injectMenusStore } from '@/store/menus.store'
 import MenusComponent from '@/components/menus/Menus.vue'
 
-@Options({
+export default defineComponent({
+    name: 'Menus',
     components: {
         MenusComponent
+    },
+    setup () {
+        const store = injectMenusStore()
+        store.load()
+        return {
+            ...store
+        }
     }
 })
-export default class Menus extends Vue {}
 </script>
