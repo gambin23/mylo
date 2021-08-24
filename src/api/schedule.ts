@@ -1,4 +1,4 @@
-import { MenuItemType } from './../types/menu-item'
+import { RecipeType } from '../types/recipe'
 import { Schedule } from './../types/schedule'
 
 const mockSchedule: Schedule[] = [{
@@ -9,19 +9,22 @@ const mockSchedule: Schedule[] = [{
         id: '1',
         name: 'Pennette',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta',
-        type: MenuItemType.Pasta
+        type: RecipeType.Pasta,
+        img: 'recipe.jpg'
     },
     {
         id: '2',
-        name: 'Pennette (V)',
-        description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta\nGluten Free & Vegan Options Available',
-        type: MenuItemType.Vegeterian
+        name: 'Ribeye',
+        description: 'Ribeye with Pepper Sauce',
+        type: RecipeType.Vegeterian,
+        img: 'recipe-2.jpg'
     },
     {
         id: '3',
         name: 'Chicken Caesar Salad',
-        description: 'Chicken Caesar Salad with Bacon, Croutons and Parmesan',
-        type: MenuItemType.Salad
+        description: 'Salad with Bacon, Croutons and Parmesan',
+        type: RecipeType.Salad,
+        img: 'recipe-3.jpg'
     }]
 },
 {
@@ -32,19 +35,22 @@ const mockSchedule: Schedule[] = [{
         id: '1',
         name: 'Pennette',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta',
-        type: MenuItemType.Pasta
+        type: RecipeType.Pasta,
+        img: 'recipe.jpg'
     },
     {
         id: '2',
         name: 'Pennette (V)',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta\nGluten Free & Vegan Options Available',
-        type: MenuItemType.Vegeterian
+        type: RecipeType.Vegeterian,
+        img: 'recipe.jpg'
     },
     {
         id: '3',
         name: 'Chicken Caesar Salad',
         description: 'Chicken Caesar Salad with Bacon, Croutons and Parmesan',
-        type: MenuItemType.Salad
+        type: RecipeType.Salad,
+        img: 'recipe.jpg'
     }]
 }]
 

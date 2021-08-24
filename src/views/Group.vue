@@ -33,6 +33,7 @@ export default defineComponent({
     <div class="row">
         <div class="col">
             <GroupComponent :group="group.state.data" :loading="group.state.loading" :error="group.state.error" />
+            <div class="mb-5"></div>
             <ScheduleComponent :schedules="schedules.state.data" :loading="schedules.state.loading" :error="schedules.state.error" />
         </div>
     </div>

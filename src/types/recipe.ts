@@ -1,4 +1,4 @@
-export enum MenuItemType {
+export enum RecipeType {
     Meat,
     Vegeterian,
     Salad,
@@ -6,9 +6,10 @@ export enum MenuItemType {
     Fish,
 }
 
-export interface MenuItem {
+export interface Recipe {
     id: string;
     name: string,
     description: string
-    type: MenuItemType
+    type: RecipeType,
+    img: string
 }
