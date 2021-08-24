@@ -1,3 +1,26 @@
+<script lang="ts">
+import { Menu } from '@/types/Menu'
+import { defineComponent, PropType } from 'vue'
+
+export default defineComponent({
+    name: 'MenusComponent',
+    props: {
+        menus: {
+            required: true,
+            type: Array as PropType<Menu[]>
+        },
+        loading: {
+            required: true,
+            type: Boolean
+        },
+        error: {
+            required: true,
+            type: Boolean
+        }
+    }
+})
+</script>
+
 <template>
     <div v-if="loading">loading...</div>
     <div v-for="menu in menus" :key="menu.id" class="card mb-3">
@@ -23,26 +46,3 @@
         </router-link>
     </div>
 </template>
-
-<script lang="ts">
-import { Menu } from '@/types/Menu'
-import { defineComponent, PropType } from 'vue'
-
-export default defineComponent({
-    name: 'MenusComponent',
-    props: {
-        menus: {
-            required: true,
-            type: Array as PropType<Menu[]>
-        },
-        loading: {
-            required: true,
-            type: Boolean
-        },
-        error: {
-            required: true,
-            type: Boolean
-        }
-    }
-})
-</script>
