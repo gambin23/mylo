@@ -1,13 +1,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { Menu } from '@/types/Menu'
+import { Group } from '@/types/group'
 
 export default defineComponent({
-    name: 'MenuComponent',
+    name: 'GroupComponent',
     props: {
-        menu: {
+        group: {
             required: false,
-            type: Object as PropType<Menu>
+            type: Object as PropType<Group>
         },
         loading: {
             required: false,
@@ -26,19 +26,19 @@ export default defineComponent({
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img v-if="menu?.img" :src="require(`@/assets/menus/${menu.img}`)" class="img-fluid rounded-start">
+                <img v-if="group?.img" :src="require(`@/assets/groups/${group.img}`)" class="img-fluid rounded-start">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{menu?.name}}
+                        {{group?.name}}
                     </h5>
                     <p class="card-text">
-                        {{menu?.description}}
+                        {{group?.description}}
                     </p>
                     <p class="card-text">
                         <small class="text-muted">
-                            {{menu?.dateCreated}}
+                            {{group?.dateCreated}}
                         </small>
                     </p>
                 </div>

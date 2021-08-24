@@ -1,8 +1,8 @@
-export interface Menu {
+export interface Group {
     id: string;
     name: string;
     description: string;
-    // dateCreated?: Date;
-    // dateUpdated?: Date;
+    dateCreated?: Date;
+    dateUpdated?: Date;
     img: string;
 }

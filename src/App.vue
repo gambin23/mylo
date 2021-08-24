@@ -1,3 +1,19 @@
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { initGroupsStore } from '@/store/groups.store'
+import { initGroupStore } from '@/store/group.store'
+import { initScheduleStore } from '@/store/schedule.store'
+
+export default defineComponent({
+    setup() {
+        initGroupsStore()
+        initGroupStore()
+        initScheduleStore()
+    }
+})
+</script>
+
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -8,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
-                        <router-link to="/" class="nav-link">Home</router-link>
+                        <router-link to="/groups" class="nav-link">Home</router-link>
                     </li>
                     <li class="nav-item active">
-                        <router-link to="/menus" class="nav-link">Menus</router-link>
+                        <router-link to="/groups" class="nav-link">Groups</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link to="/about" class="nav-link">About</router-link>
@@ -28,17 +44,3 @@
         <router-view />
     </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { initMenusStore } from '@/store/menus.store'
-import { initMenuStore } from '@/store/menu.store'
-
-export default defineComponent({
-    setup () {
-        initMenusStore()
-        initMenuStore()
-    }
-})
-</script>
-<style lang="scss">
-</style>

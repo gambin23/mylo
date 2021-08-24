@@ -1,13 +1,13 @@
 <script lang="ts">
-import { Menu } from '@/types/Menu'
+import { Group } from '@/types/group'
 import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-    name: 'MenusComponent',
+    name: 'GroupsComponent',
     props: {
-        menus: {
+        groups: {
             required: true,
-            type: Array as PropType<Menu[]>
+            type: Array as PropType<Group[]>
         },
         loading: {
             required: true,
@@ -23,22 +23,22 @@ export default defineComponent({
 
 <template>
     <div v-if="loading">loading...</div>
-    <div v-for="menu in menus" :key="menu.id" class="card mb-3">
-        <router-link :to="{ name: 'Menu', params: { id: menu.id }}" class="row g-0">
+    <div v-for="group in groups" :key="group.id" class="card mb-3">
+        <router-link :to="{ name: 'Group', params: { id: group.id }}" class="row g-0">
             <div class="col-md-4">
-                <img :src="require(`@/assets/menus/${menu.img}`)" class="img-fluid rounded-start">
+                <img :src="require(`@/assets/groups/${group.img}`)" class="img-fluid rounded-start">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{menu.name}}
+                        {{group.name}}
                     </h5>
                     <p class="card-text">
-                        {{menu.description}}
+                        {{group.description}}
                     </p>
                     <p class="card-text">
                         <small class="text-muted">
-                            {{menu.dateCreated}}
+                            {{group.dateCreated}}
                         </small>
                     </p>
                 </div>

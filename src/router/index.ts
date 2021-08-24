@@ -8,15 +8,15 @@ const routes: Array<RouteRecordRaw> = [
         component: Home
     },
     {
-        path: '/menus',
-        name: 'Menus',
+        path: '/groups',
+        name: 'Groups',
         children: [],
-        component: () => import(/* webpackChunkName: "menus" */ '@/views/Menus.vue')
+        component: () => import(/* webpackChunkName: "groups" */ '@/views/Groups.vue')
     },
     {
-        path: '/menus/:id',
-        name: 'Menu',
-        component: () => import(/* webpackChunkName: "menu" */ '@/views/Menu.vue')
+        path: '/groups/:id',
+        name: 'Group',
+        component: () => import(/* webpackChunkName: "group" */ '@/views/Group.vue')
     },
     {
         path: '/about',

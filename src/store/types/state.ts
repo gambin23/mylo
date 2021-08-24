@@ -1,5 +1,5 @@
 export interface State<T> {
-    payload: T,
+    data: T,
     loading: boolean,
     error: boolean
 }
