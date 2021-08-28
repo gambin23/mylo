@@ -26,7 +26,7 @@ export const initScheduleStore = (): void => {
             .finally(() => { state.loading = false })
     }
 
-    provide<MyOrdersStore>(SCHEDULE_STORE, {
+    return provide<MyOrdersStore>(SCHEDULE_STORE, {
         state,
         load
     })

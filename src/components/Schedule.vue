@@ -3,6 +3,7 @@ import { defineComponent, PropType } from 'vue'
 import { format } from 'date-fns'
 import { Schedule } from '@/types/schedule'
 import Avatar from '@/components/ui/Avatar.vue'
+import { User } from '@/types/user'
 
 export default defineComponent({
     name: 'ScheduleComponent',
@@ -10,6 +11,10 @@ export default defineComponent({
         Avatar
     },
     props: {
+        account: {
+            required: true,
+            type: Object as PropType<User>
+        },
         schedules: {
             required: true,
             type: Array as PropType<Schedule[]>

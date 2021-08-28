@@ -25,7 +25,7 @@ export const initGroupsStore = (): void => {
             .finally(() => { state.loading = false })
     }
 
-    provide<GroupsStore>(GROUPS_STORE, {
+    return provide<GroupsStore>(GROUPS_STORE, {
         state,
         load
     })

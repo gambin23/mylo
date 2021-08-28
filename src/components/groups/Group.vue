@@ -42,7 +42,7 @@ export default defineComponent({
 
 <template>
     <div v-if="loading">loading...</div>
-    <div class="card mb-3">
+    <div class="card">
         <div class="row g-0">
             <div class="col-md-4">
                 <img v-if="group?.img" :src="require(`@/assets/groups/${group.img}`)" class="img-fluid rounded-start">

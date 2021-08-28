@@ -25,7 +25,9 @@ export const initAccountStore = (): void => {
             .finally(() => { state.loading = false })
     }
 
-    provide<AccountStore>(ACCOUNT_STORE, {
+    load()
+
+    return provide<AccountStore>(ACCOUNT_STORE, {
         state,
         load
     })
