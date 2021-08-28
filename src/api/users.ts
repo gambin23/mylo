@@ -1,6 +1,6 @@
 import { User } from '@/types/user'
 
-const mockUser: User = {
+export const mockUser: User = {
     id: '1',
     name: 'Gilbert',
     surname: 'Gambin',

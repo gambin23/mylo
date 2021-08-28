@@ -1,8 +1,13 @@
-import { Recipe } from "./recipe"
+import { User } from '@/types/user';
+import { Recipe } from '@/types/recipe';
 
 export interface Schedule {
     id: string,
     menuId: string,
     date: Date,
-    options: Recipe[]
+    options: ScheduleRecipe[]
+}
+
+export interface ScheduleRecipe extends Recipe {
+    votes: User[]
 }

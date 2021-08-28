@@ -1,5 +1,6 @@
-import { RecipeType } from '../types/recipe'
-import { Schedule } from './../types/schedule'
+import { RecipeType } from '@/types/recipe'
+import { Schedule } from '@/types/schedule'
+import { mockUser } from './users'
 
 const mockSchedule: Schedule[] = [{
     id: '1',
@@ -10,21 +11,24 @@ const mockSchedule: Schedule[] = [{
         name: 'Pennette',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta',
         type: RecipeType.Pasta,
-        img: 'recipe.jpg'
+        img: 'recipe.jpg',
+        votes: [mockUser]
     },
     {
         id: '2',
         name: 'Ribeye',
         description: 'Ribeye with Pepper Sauce',
         type: RecipeType.Vegeterian,
-        img: 'recipe-2.jpg'
+        img: 'recipe-2.jpg',
+        votes: [mockUser, mockUser, mockUser, mockUser, mockUser]
     },
     {
         id: '3',
         name: 'Chicken Caesar Salad',
         description: 'Salad with Bacon, Croutons and Parmesan',
         type: RecipeType.Salad,
-        img: 'recipe-3.jpg'
+        img: 'recipe-3.jpg',
+        votes: [mockUser]
     }]
 },
 {
@@ -36,21 +40,24 @@ const mockSchedule: Schedule[] = [{
         name: 'Pennette',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta',
         type: RecipeType.Pasta,
-        img: 'recipe.jpg'
+        img: 'recipe.jpg',
+        votes: [mockUser]
     },
     {
         id: '2',
-        name: 'Pennette (V)',
-        description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta\nGluten Free & Vegan Options Available',
+        name: 'Ribeye',
+        description: 'Ribeye with Pepper Sauce',
         type: RecipeType.Vegeterian,
-        img: 'recipe.jpg'
+        img: 'recipe-2.jpg',
+        votes: [mockUser, mockUser, mockUser]
     },
     {
         id: '3',
         name: 'Chicken Caesar Salad',
-        description: 'Chicken Caesar Salad with Bacon, Croutons and Parmesan',
+        description: 'Salad with Bacon, Croutons and Parmesan',
         type: RecipeType.Salad,
-        img: 'recipe.jpg'
+        img: 'recipe-3.jpg',
+        votes: [mockUser, mockUser, mockUser, mockUser, mockUser, mockUser, mockUser]
     }]
 }]
 

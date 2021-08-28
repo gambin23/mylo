@@ -12,7 +12,7 @@ export default defineComponent({
     setup() {
         const accountStore = injectAccountStore()
 
-        accountStore.load('1')
+        accountStore.load()
 
         return {
             accountStore,

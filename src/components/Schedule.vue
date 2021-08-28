@@ -2,9 +2,13 @@
 import { defineComponent, PropType } from 'vue'
 import { format } from 'date-fns'
 import { Schedule } from '@/types/schedule'
+import Avatar from '@/components/ui/Avatar.vue'
 
 export default defineComponent({
     name: 'ScheduleComponent',
+    components: {
+        Avatar
+    },
     props: {
         schedules: {
             required: true,
@@ -47,7 +51,19 @@ export default defineComponent({
                             {{option.description}}
                         </p>
                     </div>
-                    <div class="card-footer">Vote</div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <router-link v-for="user in option.votes.slice(0,3)" :to="`/user/${user.id}`" :key="user.id" class="me-1">
+                                    <Avatar :text="`${user.name} ${user.surname}`" :img="user.img" />
+                                </router-link>
+                                <b v-if="option.votes.length > 3">+{{option.votes.length - 3}}</b>
+                            </div>
+                            <div class="btn btn-primary">
+                                Vote
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

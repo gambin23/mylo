@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { initAccountStore } from '@/store/account'
+import { initAccountStore, injectAccountStore } from '@/store/account'
 import { initGroupsStore } from '@/store/groups.store'
 import { initGroupStore } from '@/store/group.store'
 import { initScheduleStore } from '@/store/schedule.store'

@@ -5,6 +5,7 @@ import GroupComponent from '@/components/groups/Group.vue'
 import ScheduleComponent from '@/components/Schedule.vue'
 import { injectGroupStore } from '@/store/group.store'
 import { injectScheduleStore } from '@/store/schedule.store'
+import { injectAccountStore } from '@/store/account'
 
 export default defineComponent({
     name: 'Group',
@@ -15,6 +16,7 @@ export default defineComponent({
     setup() {
         const groupStore = injectGroupStore()
         const scheduleStore = injectScheduleStore()
+        const accountStore = injectAccountStore()
 
         const id = useRoute().params.id as string
 
@@ -23,7 +25,8 @@ export default defineComponent({
 
         return {
             group: { ...groupStore },
-            schedules: { ...scheduleStore }
+            schedules: { ...scheduleStore },
+            account: { ...accountStore }
         }
     }
 })
@@ -34,7 +37,7 @@ export default defineComponent({
         <div class="col">
             <GroupComponent :group="group.state.data" :loading="group.state.loading" :error="group.state.error" />
             <div class="mb-5"></div>
-            <ScheduleComponent :schedules="schedules.state.data" :loading="schedules.state.loading" :error="schedules.state.error" />
+            <ScheduleComponent :schedules="schedules.state.data" :account="account.state" :loading="schedules.state.loading" :error="schedules.state.error" />
         </div>
     </div>
 </template>
