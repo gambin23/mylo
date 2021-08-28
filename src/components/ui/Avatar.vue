@@ -32,7 +32,8 @@ export default defineComponent({
                 'background-color': props.background,
                 color: props.color,
                 height: props.size.toString() + 'px',
-                width: props.size.toString() + 'px'
+                width: props.size.toString() + 'px',
+                'font-size': ((props.size as number) / 2).toString() + 'px'
             }
         }
     }

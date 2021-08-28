@@ -8,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
         component: Home
     },
     {
+        path: '/my-account',
+        name: 'Account',
+        component: () => import(/* webpackChunkName: "account" */ '../views/Account.vue')
+    },
+    {
         path: '/groups',
         name: 'Groups',
         children: [],
@@ -17,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/groups/:id',
         name: 'Group',
         component: () => import(/* webpackChunkName: "group" */ '@/views/Group.vue')
+    },
+    {
+        path: '/user/:id',
+        name: 'User',
+        component: () => import(/* webpackChunkName: "user" */ '../views/User.vue')
     },
     {
         path: '/about',

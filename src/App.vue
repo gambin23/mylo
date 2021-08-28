@@ -1,12 +1,17 @@
-
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { initAccountStore } from '@/store/account'
 import { initGroupsStore } from '@/store/groups.store'
 import { initGroupStore } from '@/store/group.store'
 import { initScheduleStore } from '@/store/schedule.store'
 
+import Avatar from '@/components/ui/Avatar.vue'
 export default defineComponent({
+    components: {
+        Avatar
+    },
     setup() {
+        initAccountStore()
         initGroupsStore()
         initGroupStore()
         initScheduleStore()
@@ -36,6 +41,9 @@ export default defineComponent({
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
+                    <router-link to="/my-account" class="ms-3">
+                        <Avatar text="Gilbert" :size="48" img="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    </router-link>
                 </form>
             </div>
         </div>
