@@ -1,4 +1,4 @@
-export enum RecipeType {
+export enum RecipeCategory {
     Meat,
     Vegeterian,
     Salad,
@@ -10,6 +10,6 @@ export interface Recipe {
     id: string;
     name: string,
     description: string
-    type: RecipeType,
+    category: RecipeCategory,
     img: string
 }

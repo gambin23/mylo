@@ -1,4 +1,4 @@
-import { RecipeType } from '@/types/recipe'
+import { RecipeCategory } from '@/types/recipe'
 import { Schedule } from '@/types/schedule'
 import { mockUser } from './users'
 
@@ -10,7 +10,7 @@ const mockSchedule: Schedule[] = [{
         id: '1',
         name: 'Pennette',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta',
-        type: RecipeType.Pasta,
+        category: RecipeCategory.Pasta,
         img: 'recipe.jpg',
         votes: [mockUser]
     },
@@ -18,7 +18,7 @@ const mockSchedule: Schedule[] = [{
         id: '2',
         name: 'Ribeye',
         description: 'Ribeye with Pepper Sauce',
-        type: RecipeType.Vegeterian,
+        category: RecipeCategory.Vegeterian,
         img: 'recipe-2.jpg',
         votes: [mockUser, mockUser, mockUser, mockUser, mockUser]
     },
@@ -26,7 +26,7 @@ const mockSchedule: Schedule[] = [{
         id: '3',
         name: 'Chicken Caesar Salad',
         description: 'Salad with Bacon, Croutons and Parmesan',
-        type: RecipeType.Salad,
+        category: RecipeCategory.Salad,
         img: 'recipe-3.jpg',
         votes: [mockUser]
     }]
@@ -39,7 +39,7 @@ const mockSchedule: Schedule[] = [{
         id: '1',
         name: 'Pennette',
         description: 'Pennette with Sicilian Sausage, Spinach Tomato Sauce & Feta',
-        type: RecipeType.Pasta,
+        category: RecipeCategory.Pasta,
         img: 'recipe.jpg',
         votes: [mockUser]
     },
@@ -47,7 +47,7 @@ const mockSchedule: Schedule[] = [{
         id: '2',
         name: 'Ribeye',
         description: 'Ribeye with Pepper Sauce',
-        type: RecipeType.Vegeterian,
+        category: RecipeCategory.Vegeterian,
         img: 'recipe-2.jpg',
         votes: [mockUser, mockUser, mockUser]
     },
@@ -55,7 +55,7 @@ const mockSchedule: Schedule[] = [{
         id: '3',
         name: 'Chicken Caesar Salad',
         description: 'Salad with Bacon, Croutons and Parmesan',
-        type: RecipeType.Salad,
+        category: RecipeCategory.Salad,
         img: 'recipe-3.jpg',
         votes: [mockUser, mockUser, mockUser, mockUser, mockUser, mockUser, mockUser]
     }]
