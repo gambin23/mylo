@@ -33,6 +33,9 @@ export default defineComponent({
                     <li class="nav-item active">
                         <router-link to="/groups" class="nav-link">Groups</router-link>
                     </li>
+                    <li class="nav-item active">
+                        <router-link to="/recipes" class="nav-link">Recipes</router-link>
+                    </li>
                     <li class="nav-item">
                         <router-link to="/about" class="nav-link">About</router-link>
                     </li>

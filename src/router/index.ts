@@ -1,11 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        name: 'Home',
-        component: Home
+        redirect: 'groups'
     },
     {
         path: '/my-account',
@@ -22,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/groups/:id',
         name: 'Group',
         component: () => import(/* webpackChunkName: "group" */ '@/views/Group.vue')
+    },
+    {
+        path: '/recipes',
+        name: 'Recipes',
+        component: () => import(/* webpackChunkName: "recipes" */ '@/views/Recipes.vue')
     },
     {
         path: '/user/:id',
