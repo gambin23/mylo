@@ -1,4 +1,3 @@
-import { Group } from '@/types/group'
 import { Recipe, RecipeCategory } from '@/types/recipe'
 
 const mockRecipes: Recipe[] = [{
